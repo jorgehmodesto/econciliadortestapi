@@ -15,7 +15,7 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->group(['prefix' => '/api'], function() use ($router) {
+$router->group(['prefix' => '/api', 'middleware' => ['cros']], function() use ($router) {
 
     $router->get('/', function() {
         return "Github Repository commits API";
